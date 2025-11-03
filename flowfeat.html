@@ -2,44 +2,215 @@
 <html>
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HCLZM84F4"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1HCLZM84F4');
+    </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>FlowFeat: Pixel-Dense Embedding of Motion Profiles</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/assets/css/Highlight-Clean.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/flowfeat/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/flowfeat/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/flowfeat/favicon-16x16.png">
 
-    <meta property="article:publisher" content="https://tum-vision.github.io/" />
+    <meta property="og:site_name" content="FlowFeat: Pixel-Dense Embedding of Motion Profiles" />
+    <meta property="og:type" content="video.other" />
+    <meta property="og:title" content="FlowFeat: Pixel-Dense Embedding of Motion Profiles" />
+    <meta property="og:description" content="Distilling optical flow networks into pixel-level task-agnostic representations." />
+    <meta property="og:url" content="https://tum-vision.github.io/flowfeat" />
+    <meta property="og:image" content="https://tum-vision.github.io/flowfeat/assets/images/flowfeat_samples.png" />
+
+    <meta property="article:publisher" content="https://tum-vision.github.io/flowfeat" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FlowFeat: Pixel-Dense Embedding of Motion Profiles" />
+    <meta name="twitter:description" content="Distilling optical flow networks into pixel-level task-agnostic representations." />
+    <meta name="twitter:url" content="https://tum-vision.github.io/flowfeat" />
+    <meta name="twitter:image" content="https://tum-vision.github.io/flowfeat/assets/images/flowfeat_samples.png" />
+    <!-- <meta name="twitter:site" content="" /> -->
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script>
 </head>
 
 <body>
     <div class="highlight-clean" style="padding-bottom: 10px;">
         <div class="container" style="max-width: 768px;">
-            <h1 class="text-center"><b>FlowFeat</b>: Pixel-Dense Embedding of Motion Profiles</h1>
+            <h1 class="text-center"><b>FlowFeat</b>:<br> Pixel-Dense Embedding of Motion Profiles</h1>
+        </div>
+        <br/>
+        <div class="container" style="max-width: 768px;">
+            <div class="row authors">
+                <div class="col-sm-4">
+                    <h5 class="text-center"><a class="text-center" href="https://arnike.github.io">Nikita Araslanov</a></h5>
+                    <h6 class="text-center">TU Munich / MCML</h6>
+                </div>
+                <div class="col-sm-4">
+                    <h5 class="text-center"><a href="#">Anna Sonnweber</a></h5>
+                    <h6 class="text-center">TU Munich</h6>
+                </div>
+                <div class="col-sm-4">
+                    <h5 class="text-center"><a class="text-center" href="https://cvg.cit.tum.de/members/cremers">Daniel Cremers</a></h5>
+                    <h6 class="text-center">TU Munich / MCML</h6>
+                </div>
+            </div>    
+        </div>
+        <br/>
+        <h1 class="text-center" style="font-size:22px;">NeurIPS 2025 Spotlight</h1>
+        <br/>
+        <div class="buttons" style="margin-bottom: 8px;">
+            <a class="btn btn-light" role="button" href="#">
+                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z"></path>
+                </svg>Paper (coming soon)
+            </a>
+            <a class="btn btn-light" aria-disabled="true" role="button" href="#">
+                <svg style="margin-left:-12px;margin-right:12px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+</svg>
+                Code (coming soon)
+            </a>
         </div>
     </div>
 
-    <script src="https://polyfill.io/v3/polyfill.js?features=IntersectionObserver"></script>
-    <script src="/assets/js/yall.js"></script>
-    <script>
-        yall(
-            {
-                observeChanges: true
-            }
-        );
-    </script>
-    <script src="/assets/js/scripts.js"></script>
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12" style="font-size: 16pt;">
+                <b>The gist:</b> 
+                <span>
+                    <!-- <strong> -->
+                        Distilling optical flow networks into pixel-level task-agnostic representations.
+                    <!-- </strong> -->
+                </span>
+            </div>
+        </div>
+    </div>
+    <br/>
+
+    <div class="container text-center my-4">
+      
+      <!-- Row 1 captions -->
+      <div class="row small text-muted mb-2">
+        <div class="col"><strong>Input</strong></div>
+        <div class="col">DINOv2</div>
+        <div class="col">V-JEPA</div>
+        <div class="col">VideoMAE</div>
+        <div class="col">FeatUp</div>
+        <div class="col"><strong>FlowFeat</strong></div>
+      </div>
+
+      <!-- Row 1 images -->
+      <div class="row mb-2">
+        <div class="col p-1"><img src="assets/images/flowfeat/panda_input.png" class="img-fluid"></div>
+        <div class="col p-1"><img src="assets/images/flowfeat/dinov2/panda.png" class="img-fluid"></div>
+        <div class="col p-1"><img src="assets/images/flowfeat/vjepa/panda-vjepa.png" class="img-fluid"></div>
+        <div class="col p-1"><img src="assets/images/flowfeat/videomae/panda-vmae.png" class="img-fluid"></div>
+        <div class="col p-1"><img src="assets/images/flowfeat/featup/panda.png" class="img-fluid"></div>
+        <div class="col p-1"><img src="assets/images/flowfeat/panda_pca.png" class="img-fluid"></div>
+      </div>
+
+      <!-- Row 2 images -->
+      <div class="row g-0 mb-2">
+        <div class="col p-1"><img src="assets/images/flowfeat/turtle_input.png" class="img-fluid"></div>
+        <div class="col p-1"><img src="assets/images/flowfeat/dinov2/turtle.png" class="img-fluid"></div>
+        <div class="col p-1"><img src="assets/images/flowfeat/vjepa/turtle-vjepa.png" class="img-fluid"></div>
+        <div class="col p-1"><img src="assets/images/flowfeat/videomae/turtle-vmae.png" class="img-fluid"></div>
+        <div class="col p-1"><img src="assets/images/flowfeat/featup/turtle.png" class="img-fluid"></div>
+        <div class="col p-1"><img src="assets/images/flowfeat/turtle_pca.png" class="img-fluid"></div>
+      </div>
+
+      <!-- Row 3 images -->
+      <div class="row g-0 mb-2">
+        <div class="col p-1"><img src="assets/images/flowfeat/skateboard_input.png" class="img-fluid"></div>
+        <div class="col p-1"><img src="assets/images/flowfeat/dinov2/skateboard.png" class="img-fluid"></div>
+        <div class="col p-1"><img src="assets/images/flowfeat/vjepa/skateboard-vjepa.png" class="img-fluid"></div>
+        <div class="col p-1"><img src="assets/images/flowfeat/videomae/skateboard-vmae.png" class="img-fluid"></div>
+        <div class="col p-1"><img src="assets/images/flowfeat/featup/skateboard.png" class="img-fluid"></div>
+        <div class="col p-1"><img src="assets/images/flowfeat/skateboard_pca.png" class="img-fluid"></div>
+      </div>
+
+      <!-- Figure caption -->
+      <h6 class="caption">
+        <strong>FlowFeat</strong> provides versatile pixel-level features. Using motion-driven embedding statistics, it achieves high spatial precision and temporal consistency.  
+        Shown: PCA visualization of feature maps vs. state-of-the-art encoders.
+      </h6>
+
+    </div>
+    <hr class="divider" />
+    <div class="container text-center" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Video Object Segmentation</h2>
+                <video class="video lazy" autoplay loop playsinline controls muted>
+                    <source src="https://cvg.cit.tum.de/_media/research/flowfeat/a_vos_featup.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">
+                <strong>FlowFeat</strong> is a fine-grained feature representation, where dynamic objects are particularly prominent.
+              </h6>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Comparison to FeatUp (Fu et al., 2024)</h3>
+                <video class="video lazy" autoplay loop playsinline controls muted>
+                    <source src="https://cvg.cit.tum.de/_media/research/flowfeat/b_pca_featup.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">
+                <strong>FlowFeat</strong> scales well with the input resolution – here, increased by a factor of 2.
+              </h6>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Comparison to LoftUp (Huang et al., 2025)</h3>
+                <video class="video lazy" autoplay loop playsinline controls muted>
+                    <source src="https://cvg.cit.tum.de/_media/research/flowfeat/d_pca_vs_loftup.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">
+                FlowFeat fares well against supervised models such as LoftUp and can be trained in a completely unsupervised fashion.
+              </h6>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Citation</h2>
+                <code>
+                    @inproceedings{Araslanov:2025:FlowFeat,<br>
+                    &nbsp; author = {Araslanov, Nikita and Sonnweber, Anna and Cremers, Daniel},<br>
+                    &nbsp; title  = {{FlowFeat}: Pixel-Dense Embedding of Motion Profiles},<br>
+                    &nbsp; booktitle = {NeurIPS},<br>
+                    &nbsp; year   = {2025},<br>
+                }</code>
+            </div>
+        </div>
+    </div>
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <footer>
+            Website template credit: <a href="https://dreamfusion3d.github.io/">DreamFusion</a>
+        <footer>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/js/webflow.fd002feec.js"></script>
     <!-- Import the component -->
+
 </body>
 
 </html>
