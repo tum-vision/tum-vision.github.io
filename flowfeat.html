@@ -141,11 +141,93 @@
       </h6>
 
     </div>
+    
     <hr class="divider" />
+
+    <h3 class="text-center mb-3">More FlowFeat Examples</h3>
+
+    <div class="container mt-4">
+
+        <div class="row g-0 mb-2">
+            
+            <div class="col p-1">
+                <div class="hover-img">
+                    <img src="assets/images/flowfeat/examples/snakes_input.png" class="main">
+                    <img src="assets/images/flowfeat/examples/snakes_pca.png" class="hover">
+
+                    <div class="img-title">
+                      <span>Hover to view</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col p-1">
+                <div class="hover-img">
+                    <img src="assets/images/flowfeat/examples/piano_input.png" class="main">
+                    <img src="assets/images/flowfeat/examples/piano_pca.png" class="hover">
+
+                    <div class="img-title">
+                      <span>Hover to view</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col p-1">
+                <div class="hover-img">
+                    <img src="assets/images/flowfeat/examples/deer_input.png" class="main">
+                    <img src="assets/images/flowfeat/examples/deer_pca.png" class="hover">
+
+                    <div class="img-title">
+                      <span>Hover to view</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col p-1">
+                <div class="hover-img">
+                    <img src="assets/images/flowfeat/examples/turtles_input.png" class="main">
+                    <img src="assets/images/flowfeat/examples/turtles_pca.png" class="hover">
+
+                    <div class="img-title">
+                      <span>Hover to view</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col p-1">
+                <div class="hover-img">
+                    <img src="assets/images/flowfeat/examples/skater_input.png" class="main">
+                    <img src="assets/images/flowfeat/examples/skater_pca.png" class="hover">
+
+                    <div class="img-title">
+                      <span>Hover to view</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col p-1">
+                <div class="hover-img">
+                    <img src="assets/images/flowfeat/examples/zebras_input.png" class="main">
+                    <img src="assets/images/flowfeat/examples/zebras_pca.png" class="hover">
+
+                    <div class="img-title">
+                      <span>Hover to view</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <hr class="divider" />
+    <h2 class="text-center mb-3">Video Object Segmentation</h2>
+
     <div class="container text-center" style="max-width: 768px;">
         <div class="row">
             <div class="col-md-12">
-                <h2>Video Object Segmentation</h2>
+               
                 <video class="video lazy" autoplay loop playsinline controls muted>
                     <source src="https://cvg.cit.tum.de/_media/research/flowfeat/a_vos_featup.mp4" type="video/mp4"></source>
                 </video>
@@ -181,10 +263,11 @@
     </div>
 
     <hr class="divider" />
+    <h2 class="text-center mb-3">Citation</h2>
+
     <div class="container" style="max-width: 768px;">
         <div class="row">
             <div class="col-md-12">
-                <h2>Citation</h2>
                 <code>
                     @inproceedings{Araslanov:2025:FlowFeat,<br>
                     &nbsp; author = {Araslanov, Nikita and Sonnweber, Anna and Cremers, Daniel},<br>
@@ -252,7 +335,12 @@
           .alert('close'); // Bootstrap dismiss
       });
 
+      $('.hover-img').one('mouseenter touchstart', function() {
+        $(this).addClass('hide-hint');
+      });
+
     });
+
     </script>
 
 </body>
